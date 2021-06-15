@@ -1,9 +1,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  devtool: "source-map",
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -14,16 +14,16 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"],
-          },
-        },
+        use: ["babel-loader"],
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        test: /\.css$/i,
+        use: [
+          // "style-loader",
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+        ],
       },
     ],
   },
@@ -32,6 +32,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/index.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "bundle.css",
     }),
   ],
   devServer: {
@@ -46,4 +49,5 @@ module.exports = {
     open: true,
     port: 9090,
   },
+  // devtool: "eval-cheap-source-map	",
 };
