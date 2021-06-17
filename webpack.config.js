@@ -7,7 +7,7 @@ const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
 
 const filename = (ext) =>
-  isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`;
+  isDev ? `[name].${ext}` : `./[name].[contenthash].${ext}`;
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -50,25 +50,43 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            // options: {
-            //   hmr: isDev,
-            // },
           },
           "css-loader",
         ],
       },
+
       {
-        test: /\.(?:|gif|png|jpg|jpeg|svg)$/,
+        test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: "file-loader",
             options: {
-              name: `./img/${filename("[ext]")}`,
+              name: "./[name].[ext]",
+              outputPath: "./img",
             },
           },
+          "img-loader",
         ],
       },
+      // {
+      //   test: /\.(?:|gif|png|jpg|jpeg|svg)$/,
+
+      //   use: [
+      //     {
+      //       loader: "img-loader",
+
+      //       options: {
+      //         name: `./img/${filename("[ext]")}`,
+
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
 };
 // name: `./img/${filename("[ext]")}`,  //  image/[name].[ext] //  name: "./img/[name].[ext]",
+// name: `./img/${filename('[ext]')}`   ["img-loader", "url-loader"],
+
+// {test: /\.(jpe?g|png|gif|svg)$/i, loader: "file-loader?name=/public/icons/[name].[ext]"},
+// name: `./img/${filename("[ext]")}`,
