@@ -90,10 +90,8 @@
 /* = header end =*/
 
 /* = head start= */
-
 .head-section {
   background-color: #e2e1e7;
-  /* margin-bottom: 150px; */
   margin: 0 auto 150px;
 }
 
@@ -128,6 +126,9 @@
   background: #8773f7;
 }
 
+/* = head end= */
+
+/* = getting-section start = */
 .wrapper {
   display: flex;
   justify-content: space-between;
@@ -142,7 +143,6 @@
   height: 950px;
   margin: 0 auto 80px;
   padding-right: 50px;
-  /* margin-bottom:; */
 }
 
 .getting-section_item-tree,
@@ -152,7 +152,6 @@
   width: 374px;
   height: 70px;
   margin: 150px 0;
-  /* margin: 150px 0px 0px 0px; */
   border: 3px dashed #6248ff;
   background-color: #fff;
 }
@@ -257,7 +256,9 @@
   top: 488px;
   right: 0;
 }
-/* =========================  slider*/
+/* = getting-section end = */
+
+/* = section-slider start = */
 
 .slider-section {
   width: 1200px;
@@ -316,6 +317,9 @@
   margin-bottom: 20px;
   padding-left: 50px;
 }
+.slide_box-description {
+  padding-left: 25px;
+}
 
 .slide_box-name {
   font-family: 'MuseoSansCyrl-500';
@@ -363,13 +367,16 @@
 .slide_info-title::before {
   content: url('../img/inverted.png');
   position: absolute;
+  top: 5px;
   left: 0;
 }
 
 .active {
   border: 1px solid #6248ff;
 }
-/* section-question */
+/* = section-slider end = */
+
+/* = section-question start = */
 
 .section-question {
   width: 1200px;
@@ -393,7 +400,6 @@
   background-color: #e2e1e7;
 }
 
-/* ====================================== */
 .bord {
   position: relative;
   border: 2px solid #6248ff;
@@ -451,7 +457,9 @@
   transition: max-height 0.2s ease-out;
 }
 
-/* ======= Contact us! =========*/
+/* = section-question end = */
+
+/* = section-contact  start= */
 .section-contacts_form {
   margin-top: 20px;
 }
@@ -523,7 +531,9 @@
   color: #4f4f4f;
 }
 
-/* ====form =========== */
+/* = section-contact  end= */
+
+/* section-form  start=*/
 
 .section-contacts_form-input {
   padding-bottom: 25px;
@@ -624,8 +634,9 @@
 .section-contacts_form-btn:hover {
   background: #8773f7;
 }
+/* section-form end=*/
 
-/* ==================== footer */
+/* = footer start =*/
 
 .footer-container {
   width: 1200px;
@@ -692,8 +703,9 @@
   line-height: 27px;
   color: #828282;
 }
+/* = footer end =*/
 
-/* =======media================ */
+/* === media === */
 
 @media (min-width: 768px) and (max-width: 1200px) {
   /* = header start = */
@@ -837,9 +849,9 @@
   }
 
   .head-section_image {
-    padding: 45px 0 0 0;
     width: 418px;
     height: 450px;
+    padding: 45px 0 0 0;
   }
 
   .head-section_title {
@@ -928,6 +940,7 @@
     width: 760px;
     margin-bottom: 50px;
   }
+
   .slider-wrapper {
     width: 760px;
     display: flex;
@@ -935,9 +948,9 @@
   }
 
   .slider-container {
-    margin: 0 auto;
     width: 508px;
     height: 365px;
+    margin: 0 auto;
   }
 
   .slide_info-title {
@@ -951,6 +964,7 @@
   .slide_info {
     display: flex;
     flex-direction: column;
+    text-align: center;
     margin: 0 auto;
     padding: 0 0 59px 0;
   }
@@ -962,7 +976,7 @@
   .slide_info-title::before {
     left: 30px;
     top: -45px;
-    right: -4px;
+    right: -2px;
   }
 
   .slider-btn {
@@ -979,6 +993,7 @@
     height: 140px;
     margin-left: 30px;
   }
+
   .slide_item {
     max-width: 520px;
     height: 365px;
@@ -990,7 +1005,6 @@
   /* = slider-section end= */
 
   /* = section-question start = */
-
   .section-question {
     width: 760px;
   }
@@ -1008,7 +1022,6 @@
   /* = section-question end = */
 
   /* = section-contacts start = */
-
   .section-contacts_container {
     flex-direction: column;
     align-items: center;
@@ -1026,23 +1039,22 @@
   /* = section-contacts end = */
 
   /* = footer-section start= */
-
   .footer-container {
+    position: relative;
     width: 688px;
     height: 900px;
     margin: 0 auto;
-    position: relative;
   }
   .fotter-title {
-    margin-bottom: 25px;
     width: 688px;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 25px;
   }
 
   .footer-title_list-item {
-    text-align: center;
     width: 508px;
+    text-align: center;
   }
 
   .footer-privacy {
@@ -1052,8 +1064,8 @@
     text-align: center;
   }
   .footer-privacy_item {
-    margin-bottom: 16px;
     width: 278px;
+    margin-bottom: 16px;
   }
   .footer-title_list-sub-title {
     width: 508px;
@@ -1117,7 +1129,6 @@
   /*= header end =*/
 
   /* = burger menu start= */
-
   .hamburger-menu {
     position: relative;
   }
@@ -1130,14 +1141,17 @@
   #menu__toggle:checked ~ .menu__btn > span {
     transform: rotate(45deg);
   }
+
   #menu__toggle:checked ~ .menu__btn > span::before {
     top: 0;
     transform: rotate(0);
   }
+
   #menu__toggle:checked ~ .menu__btn > span::after {
     top: 0;
     transform: rotate(90deg);
   }
+
   #menu__toggle:checked ~ .menu__box {
     visibility: visible;
     right: 0;
@@ -1165,10 +1179,12 @@
     background-color: #616161;
     transition-duration: 0.25s;
   }
+
   .menu__btn > span::before {
     content: '';
     top: -8px;
   }
+
   .menu__btn > span::after {
     content: '';
     top: 8px;
@@ -1203,18 +1219,20 @@
     text-decoration: none;
     transition-duration: 0.25s;
   }
+
   .menu__item:hover {
     background-color: #cfd8dc;
   }
   /* = burger menu end= */
 
-  /*= head section start = */
+  /* = head section start = */
   .head-section {
     min-width: 280px;
     height: 833px;
     padding: 0 20px;
     margin: 0 auto 80px;
   }
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -1257,7 +1275,6 @@
   /*= head section end = */
 
   /* = getting-section start = */
-
   .getting-section {
     display: flex;
     flex-direction: column;
@@ -1299,6 +1316,7 @@
   .row-three {
     display: none;
   }
+
   .getting-section_item-title {
     width: 232px;
   }
@@ -1347,7 +1365,7 @@
   }
 
   .slide_info-title::before {
-    left: 137px;
+    left: 134px;
     top: -52px;
   }
 
@@ -1357,6 +1375,7 @@
     text-align: center;
     padding: 0;
   }
+
   .slide_info {
     flex-direction: column;
     text-align: center;
@@ -1368,13 +1387,11 @@
   }
 
   .slide_box-img {
-    margin-left: 32px;
+    margin-left: 21px;
   }
-
   /* = slider-section end = */
 
   /* = section-question start = */
-
   .section-question {
     width: 100%;
     min-width: 280px;
@@ -1419,6 +1436,7 @@
     padding-top: 48px;
     height: 1138px;
   }
+
   .section-contacts_container {
     display: flex;
     flex-direction: column;
@@ -1447,6 +1465,7 @@
   .section-contacts_items {
     height: auto;
   }
+
   .section-contacts_title {
     height: 150px;
     margin-bottom: 24px;
@@ -1478,13 +1497,13 @@
     margin: 0;
     width: 248px;
   }
+
   .section-contacts_form-input {
     width: 248px;
   }
   /* = section-contacts end = */
 
   /* = footer start = */
-
   .footer {
     height: 1350px;
   }
@@ -1492,9 +1511,9 @@
   .footer-container {
     position: relative;
     width: 280px;
-    /* height: auto; */
     height: 1350px;
   }
+
   .fotter-title {
     flex-direction: column;
     width: 280px;
