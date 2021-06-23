@@ -11,13 +11,11 @@ const items = document.querySelectorAll('.slide_item');
 const itemsCount = items.length;
 const itemWidth = container.clientWidth / slidesToShow;
 
-
 let movePosition = slideToScroll * itemWidth;
 
 items.forEach(item => {
   item.style.minWidth = `${itemWidth}px`;
 });
-
 
 btnNext.addEventListener('click', () => {
   const itemLeft =
@@ -33,8 +31,6 @@ btnNext.addEventListener('click', () => {
   checkBtns();
 });
 
-
-
 btnPrev.addEventListener('click', () => {
   const itemLeft = itemsCount - Math.abs(position) / itemWidth;
 
@@ -48,11 +44,9 @@ btnPrev.addEventListener('click', () => {
   checkBtns();
 });
 
-
 const setPosition = () => {
   track.style.transform = `translateX(${position}px)`;
 };
-
 
 const checkBtns = () => {
   const isDisabled = (btnPrev.disabled = position === 0);
