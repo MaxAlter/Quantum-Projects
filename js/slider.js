@@ -9,14 +9,15 @@ const btnPrev = document.querySelector('.slider-btn_prev');
 const btnNext = document.querySelector('.slider-btn_next');
 const items = document.querySelectorAll('.slide_item');
 const itemsCount = items.length;
-
 const itemWidth = container.clientWidth / slidesToShow;
+
 
 let movePosition = slideToScroll * itemWidth;
 
 items.forEach(item => {
   item.style.minWidth = `${itemWidth}px`;
 });
+
 
 btnNext.addEventListener('click', () => {
   const itemLeft =
@@ -26,12 +27,13 @@ btnNext.addEventListener('click', () => {
 
   if (itemLeft === 1) {
     btnNext.classList.remove('active');
-    btnPrev.classList.add('active');
-  }
+  } else btnPrev.classList.add('active');
 
   setPosition();
   checkBtns();
 });
+
+
 
 btnPrev.addEventListener('click', () => {
   const itemLeft = itemsCount - Math.abs(position) / itemWidth;
@@ -40,8 +42,7 @@ btnPrev.addEventListener('click', () => {
 
   if (itemLeft === 3) {
     btnPrev.classList.remove('active');
-    btnNext.classList.add('active');
-  }
+  } else btnNext.classList.add('active');
 
   setPosition();
   checkBtns();
@@ -51,6 +52,7 @@ btnPrev.addEventListener('click', () => {
 const setPosition = () => {
   track.style.transform = `translateX(${position}px)`;
 };
+
 
 const checkBtns = () => {
   const isDisabled = (btnPrev.disabled = position === 0);
