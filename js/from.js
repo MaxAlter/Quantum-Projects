@@ -1,9 +1,9 @@
-"use strict";
+// "use strict";
 
-document.getElementById("#trigger").onclick = function () {
-  open();
-};
+// document.getElementById("#trigger").onclick = function () {
+//   open();
+// };
 
-function open() {
-  document.getElementById("#menu").classList.toggle("show");
-}
+// function open() {
+//   document.getElementById("#menu").classList.toggle("show");
+// }
